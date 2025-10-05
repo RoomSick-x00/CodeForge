@@ -25,21 +25,26 @@ export default function Schedule() {
   }, []);
 
   const schedule = [
-    { time: '09:00', event: 'Registration & Welcome', description: 'Check-in, team formation, and opening ceremony' },
-    { time: '10:00', event: 'Hackathon Begins', description: '24-hour coding marathon starts now!' },
-    { time: '12:00', event: 'Lunch Break', description: 'Fuel up for the afternoon session' },
-    { time: '14:00', event: 'Workshop Session 1', description: 'Introduction to modern web technologies' },
-    { time: '16:00', event: 'Mentorship Round', description: 'Get guidance from industry experts' },
-    { time: '18:00', event: 'Dinner Break', description: 'Recharge and network with fellow hackers' },
-    { time: '20:00', event: 'Workshop Session 2', description: 'Advanced development techniques' },
-    { time: '22:00', event: 'Midnight Snacks', description: 'Late-night coding fuel' },
-    { time: '02:00', event: 'Night Owl Session', description: 'Keep the momentum going!' },
-    { time: '06:00', event: 'Sunrise Breakfast', description: 'Welcome the new day with energy' },
-    { time: '08:00', event: 'Final Sprint', description: 'Last push to complete your projects' },
-    { time: '09:30', event: 'Submission Deadline', description: 'All projects must be submitted' },
-    { time: '10:00', event: 'Judging & Demos', description: 'Present your amazing creations' },
-    { time: '12:00', event: 'Awards Ceremony', description: 'Celebrate the winners and achievements' },
-  ];
+  // Day 1 — Kickoff & Coding Begins
+  { time: '09:00 AM', event: 'Check-in & Registration', description: 'Team verification and ID distribution' },
+  { time: '09:30 AM', event: 'Opening Ceremony & Theme Reveal', description: 'Welcome note, rules overview, and theme announcement' },
+  { time: '10:00 AM', event: 'Hackathon Begins', description: 'Code Forge officially kicks off — start building!' },
+  { time: '10:00 AM – 01:00 PM', event: 'Phase 1: Planning & Setup', description: 'Brainstorm ideas and set up your development environment' },
+  { time: '01:00 PM', event: 'Lunch Break', description: 'Take a break and refuel for the afternoon' },
+  { time: '02:00 PM – 07:00 PM', event: 'Phase 2: Hacking Continues', description: 'Collaborate and build — focus on your MVP' },
+  { time: '07:00 PM', event: 'Dinner Break', description: 'Relax and network with fellow participants' },
+  { time: '08:00 PM – 12:00 AM', event: 'Phase 3: Late Night Coding', description: 'Quiet hours — deep work and debugging' },
+
+  // Day 2 — Mentorship, Review & Final Judging
+  { time: '12:00 AM – 07:00 AM', event: 'Early Morning Coding', description: 'Push through the night — refine your prototype' },
+  { time: '07:00 AM', event: 'Breakfast Break', description: 'Light meal to kickstart the day' },
+  { time: '08:00 AM – 01:00 PM', event: 'Mentorship & Mid-Point Check', description: 'Get guidance from mentors and fine-tune your project' },
+  { time: '01:00 PM', event: 'Lunch Break', description: 'Recharge before the final sprint' },
+  { time: '06:00 PM – 08:30 PM', event: 'Final Presentations & Judging', description: 'Present your project to the judging panel' },
+  { time: '08:30 PM', event: 'Judges Deliberation', description: 'Final evaluation and decision-making' },
+  { time: '09:00 PM', event: 'Awards & Closing Ceremony', description: 'Celebrate innovation and announce the winners' },
+];
+
 
   return (
     <section
@@ -54,7 +59,7 @@ export default function Schedule() {
           </h2>
           <div className="w-24 h-1 bg-cyber-red mx-auto mb-4"></div>
           <p className="text-lg text-cyber-gray/80 max-w-2xl mx-auto">
-            A carefully crafted 24-hour journey designed to maximize creativity, learning, and innovation.
+            A carefully crafted 36-hour journey designed to maximize creativity, learning, and innovation.
           </p>
         </div>
 
@@ -104,7 +109,7 @@ export default function Schedule() {
               Ready to Join?
             </h3>
             <p className="text-cyber-gray/90 mb-4">
-              Don't miss out on this incredible 24-hour journey of innovation and creativity.
+              Don't miss out on this incredible 36-hour journey of innovation and creativity.
             </p>
             <button
               onClick={() => {

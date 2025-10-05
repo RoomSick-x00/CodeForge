@@ -41,7 +41,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-cyber-gray/90 leading-relaxed">
-              Code Forge is a 24-hour intensive hackathon that brings together the brightest minds 
+              Code Forge is a 36-hour intensive hackathon that brings together the brightest minds 
               from colleges across the region. It's not just about coding—it's about innovation, 
               collaboration, and pushing the boundaries of what's possible.
             </p>
@@ -52,11 +52,11 @@ export default function About() {
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="bg-cyber-red/10 border border-cyber-red/20 rounded-lg px-4 py-2">
-                <span className="text-cyber-red font-semibold">24 Hours</span>
+                <span className="text-cyber-red font-semibold">36 Hours</span>
                 <p className="text-sm text-cyber-gray/70">Non-stop coding</p>
               </div>
               <div className="bg-cyber-red/10 border border-cyber-red/20 rounded-lg px-4 py-2">
-                <span className="text-cyber-red font-semibold">Teams of 2-4</span>
+                <span className="text-cyber-red font-semibold">Teams of 3-5</span>
                 <p className="text-sm text-cyber-gray/70">Collaborate & build</p>
               </div>
               <div className="bg-cyber-red/10 border border-cyber-red/20 rounded-lg px-4 py-2">
@@ -82,7 +82,7 @@ export default function About() {
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-cyber-red rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span>Workshops on cutting-edge technologies</span>
+                  <span>Hands-on mentorship and mid-event guidance from industry experts</span> 
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-cyber-red rounded-full mt-2 mr-3 flex-shrink-0"></div>

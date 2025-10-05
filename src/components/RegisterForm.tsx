@@ -1,26 +1,28 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+import { useState, useEffect, useRef } from "react";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function RegisterForm() {
   const formRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState({
-    team_name: '',
-    members: '',
-    email: '',
-    project_idea: ''
+    team_name: "",
+    email: "",
+    contact_number: "",
+    members: [""],
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
@@ -34,40 +36,66 @@ export default function RegisterForm() {
     return () => observer.disconnect();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    index?: number
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+
+    if (name === "members" && typeof index === "number") {
+      const updatedMembers = [...formData.members];
+      updatedMembers[index] = value;
+      setFormData((prev) => ({ ...prev, members: updatedMembers }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const addMemberField = () => {
+    setFormData((prev) => ({ ...prev, members: [...prev.members, ""] }));
+  };
+
+  const removeMemberField = (index: number) => {
+    const updatedMembers = [...formData.members];
+    updatedMembers.splice(index, 1);
+    setFormData((prev) => ({ ...prev, members: updatedMembers }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    // Check minimum members
+    const filledMembers = formData.members.filter((m) => m.trim() !== "");
+    if (filledMembers.length < 3) {
+      setErrorMessage("You must have at least 3 team members.");
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const { data, error } = await supabase
-        .from('registrations')
-        .insert([formData]);
+        .from("registrations")
+        .insert([{ ...formData, members: filledMembers }]);
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       setFormData({
-        team_name: '',
-        members: '',
-        email: '',
-        project_idea: ''
+        team_name: "",
+        email: "",
+        contact_number: "",
+        members: [""],
       });
     } catch (error: any) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-      setErrorMessage(error.message || 'An error occurred while submitting the form.');
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+      setErrorMessage(
+        error.message || "An error occurred while submitting the form."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -86,22 +114,24 @@ export default function RegisterForm() {
           </h2>
           <div className="w-24 h-1 bg-cyber-red mx-auto mb-4"></div>
           <p className="text-lg text-cyber-gray/80 max-w-2xl mx-auto">
-            Join the most exciting hackathon of the year. Fill out the form below to secure your spot!
+            Join the most exciting hackathon of the year. Fill out the form
+            below to secure your spot!
           </p>
         </div>
 
         <div className="bg-gradient-to-br from-cyber-dark/80 to-cyber-dark/60 border border-cyber-red/20 rounded-2xl p-8 md:p-12">
-          {submitStatus === 'success' ? (
+          {submitStatus === "success" ? (
             <div className="text-center py-12">
               <div className="text-6xl mb-6">🎉</div>
               <h3 className="text-3xl font-orbitron font-bold text-cyber-red mb-4">
                 Registration Successful!
               </h3>
               <p className="text-lg text-cyber-gray/90 mb-6">
-                Thank you for registering for Code Forge! We'll send you a confirmation email shortly.
+                Thank you for registering for Code Forge! We'll send you a
+                confirmation email shortly.
               </p>
               <button
-                onClick={() => setSubmitStatus('idle')}
+                onClick={() => setSubmitStatus("idle")}
                 className="btn-secondary"
               >
                 Register Another Team
@@ -111,7 +141,10 @@ export default function RegisterForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="team_name" className="block text-sm font-semibold text-cyber-gray mb-2">
+                  <label
+                    htmlFor="team_name"
+                    className="block text-sm font-semibold text-cyber-gray mb-2"
+                  >
                     Team Name *
                   </label>
                   <input
@@ -127,7 +160,10 @@ export default function RegisterForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-cyber-gray mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-cyber-gray mb-2"
+                  >
                     Team Leader Email *
                   </label>
                   <input
@@ -144,44 +180,65 @@ export default function RegisterForm() {
               </div>
 
               <div>
-                <label htmlFor="members" className="block text-sm font-semibold text-cyber-gray mb-2">
-                  Team Members *
+                <label
+                  htmlFor="contact_number"
+                  className="block text-sm font-semibold text-cyber-gray mb-2"
+                >
+                  Team Leader Contact Number *
                 </label>
                 <input
-                  type="text"
-                  id="members"
-                  name="members"
-                  value={formData.members}
+                  type="tel"
+                  id="contact_number"
+                  name="contact_number"
+                  value={formData.contact_number}
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 bg-cyber-dark/50 border border-cyber-red/30 rounded-lg text-cyber-gray placeholder-cyber-gray/50 focus:border-cyber-red focus:outline-none focus:ring-2 focus:ring-cyber-red/20 transition-colors"
-                  placeholder="Enter names of all team members (2-4 members)"
+                  placeholder="+1 234 567 890"
                 />
-                <p className="text-sm text-cyber-gray/70 mt-1">
-                  Separate names with commas (e.g., John Doe, Jane Smith, Bob Johnson)
-                </p>
               </div>
 
               <div>
-                <label htmlFor="project_idea" className="block text-sm font-semibold text-cyber-gray mb-2">
-                  Project Idea (Optional)
+                <label className="block text-sm font-semibold text-cyber-gray mb-2">
+                  Team Members *
                 </label>
-                <textarea
-                  id="project_idea"
-                  name="project_idea"
-                  value={formData.project_idea}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 bg-cyber-dark/50 border border-cyber-red/30 rounded-lg text-cyber-gray placeholder-cyber-gray/50 focus:border-cyber-red focus:outline-none focus:ring-2 focus:ring-cyber-red/20 transition-colors resize-none"
-                  placeholder="Describe your project idea or leave blank if you want to brainstorm during the event"
-                />
+                {formData.members.map((member, index) => (
+                  <div key={index} className="flex items-center mb-2">
+                    <input
+                      type="text"
+                      name="members"
+                      value={member}
+                      onChange={(e) => handleInputChange(e, index)}
+                      required
+                      className="flex-1 px-4 py-3 bg-cyber-dark/50 border border-cyber-red/30 rounded-lg text-cyber-gray placeholder-cyber-gray/50 focus:border-cyber-red focus:outline-none focus:ring-2 focus:ring-cyber-red/20 transition-colors"
+                      placeholder={`Member ${index + 1} Name`}
+                    />
+                    {formData.members.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => removeMemberField(index)}
+                        className="ml-2 text-cyber-red text-xl font-bold"
+                      >
+                        &times;
+                      </button>
+                    )}
+                  </div>
+                ))}
+
+                {formData.members.length < 5 && (
+                  <button
+                    type="button"
+                    onClick={addMemberField}
+                    className="mt-2 text-cyber-red font-bold flex items-center"
+                  >
+                    + Add Member
+                  </button>
+                )}
               </div>
 
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
-                  <p className="text-red-400 text-sm">
-                    {errorMessage || 'An error occurred while submitting the form. Please try again.'}
-                  </p>
+                  <p className="text-red-400 text-sm">{errorMessage}</p>
                 </div>
               )}
 
@@ -190,7 +247,7 @@ export default function RegisterForm() {
                   type="submit"
                   disabled={isSubmitting}
                   className={`btn-primary text-lg px-12 py-4 ${
-                    isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                    isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
                   {isSubmitting ? (
@@ -199,33 +256,12 @@ export default function RegisterForm() {
                       Submitting...
                     </div>
                   ) : (
-                    'Register Team'
+                    "Register Team"
                   )}
                 </button>
               </div>
             </form>
           )}
-
-          {/* Additional Info */}
-          <div className="mt-12 pt-8 border-t border-cyber-red/20">
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-2xl mb-2">📅</div>
-                <h4 className="font-semibold text-cyber-red mb-1">Registration Deadline</h4>
-                <p className="text-sm text-cyber-gray/80">November 20, 2025</p>
-              </div>
-              <div>
-                <div className="text-2xl mb-2">👥</div>
-                <h4 className="font-semibold text-cyber-red mb-1">Team Size</h4>
-                <p className="text-sm text-cyber-gray/80">2-4 members</p>
-              </div>
-              <div>
-                <div className="text-2xl mb-2">🎓</div>
-                <h4 className="font-semibold text-cyber-red mb-1">Eligibility</h4>
-                <p className="text-sm text-cyber-gray/80">College students only</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

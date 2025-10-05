@@ -27,45 +27,45 @@ export default function Prizes() {
   const prizes = [
     {
       position: '1st Place',
-      amount: '₹50,000',
+      amount: '₹10,000',
       icon: '🥇',
       description: 'Grand Prize Winner',
-      perks: ['Cash Prize', 'Trophy', 'Certificates', 'Mentorship Opportunity']
+      perks: ['Cash Prize', 'Medal', 'Certificates', 'Mentorship Opportunity']
     },
     {
       position: '2nd Place',
-      amount: '₹30,000',
+      amount: '₹5,000',
       icon: '🥈',
       description: 'Runner-up',
-      perks: ['Cash Prize', 'Medal', 'Certificates', 'Networking Session']
+      perks: ['Cash Prize', 'Medal', 'Certificates']
     },
     {
       position: '3rd Place',
-      amount: '₹20,000',
+      amount: '₹2,500',
       icon: '🥉',
       description: 'Second Runner-up',
-      perks: ['Cash Prize', 'Medal', 'Certificates', 'Goodie Bag']
+      perks: ['Cash Prize', 'Medal', 'Certificates']
     },
     {
       position: 'Best Innovation',
-      amount: '₹15,000',
+      amount: '₹500',
       icon: '💡',
       description: 'Most Creative Solution',
       perks: ['Cash Prize', 'Special Recognition', 'Certificates']
     },
     {
       position: 'Best Design',
-      amount: '₹10,000',
+      amount: '₹500',
       icon: '🎨',
       description: 'Outstanding UI/UX',
-      perks: ['Cash Prize', 'Design Award', 'Certificates']
+      perks: ['Cash Prize', 'Certificates']
     },
     {
       position: 'Best Pitch',
-      amount: '₹10,000',
+      amount: '₹500',
       icon: '🎤',
       description: 'Most Compelling Presentation',
-      perks: ['Cash Prize', 'Presentation Award', 'Certificates']
+      perks: ['Cash Prize', 'Recognition', 'Certificates']
     }
   ];
 
@@ -164,14 +164,6 @@ export default function Prizes() {
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-cyber-red rounded-full mr-3"></div>
                     Portfolio Showcase
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-cyber-red rounded-full mr-3"></div>
-                    Job Opportunities
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-cyber-red rounded-full mr-3"></div>
-                    Startup Incubation Support
                   </li>
                 </ul>
               </div>

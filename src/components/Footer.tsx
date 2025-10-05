@@ -15,7 +15,7 @@ export default function Footer() {
               CODE FORGE
             </h3>
             <p className="text-cyber-gray/80 leading-relaxed mb-4">
-              A 24-hour college hackathon that brings together the brightest minds to innovate, 
+              A 36-hour college hackathon that brings together the brightest minds to innovate, 
               collaborate, and build the future.
             </p>
             <p className="text-sm text-cyber-gray/60">
@@ -58,25 +58,25 @@ export default function Footer() {
               <div className="flex items-center">
                 <div className="w-5 h-5 mr-3 text-cyber-red">📧</div>
                 <a 
-                  href="mailto:codeforge@chaitanya.edu"
+                  href="mailto:priyanshu.pkbadshah18@gmail.com"
                   className="text-cyber-gray/80 hover:text-cyber-red transition-colors duration-200"
                 >
-                  codeforge@chaitanya.edu
+                  Priyanshu(email)
                 </a>
               </div>
               <div className="flex items-center">
                 <div className="w-5 h-5 mr-3 text-cyber-red">📱</div>
                 <a 
-                  href="tel:+91-9876543210"
+                  href="tel:+91-9805267720"
                   className="text-cyber-gray/80 hover:text-cyber-red transition-colors duration-200"
                 >
-                  +91-9876543210
+                  +91-9805267720
                 </a>
               </div>
               <div className="flex items-center">
                 <div className="w-5 h-5 mr-3 text-cyber-red">📍</div>
                 <span className="text-cyber-gray/80">
-                  Chaitanya College Campus
+                  Himachal Pradesh Technical University
                 </span>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/priyanshu-choudhary-4a17a6280/" 
                 className="text-cyber-gray/60 hover:text-cyber-red transition-colors duration-200"
                 aria-label="LinkedIn"
               >
@@ -106,7 +106,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://github.com/RoomSick-x00" 
                 className="text-cyber-gray/60 hover:text-cyber-red transition-colors duration-200"
                 aria-label="GitHub"
               >
@@ -131,7 +131,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-cyber-red/20 pt-8 mt-8 text-center">
           <p className="text-cyber-gray/60 text-sm">
-            © 2025 Chaitanya — Code Forge. Built with ❤️ for the developer community.
+            © 2025 Code Forge. With 💝 by MoonKnight.
           </p>
         </div>
       </div>
