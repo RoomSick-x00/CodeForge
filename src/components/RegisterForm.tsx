@@ -103,14 +103,14 @@ export default function RegisterForm() {
 
   return (
     <section
-      id="register"
+      id="preregister"
       ref={formRef}
       className="py-20 px-4 sm:px-6 lg:px-8 fade-in"
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-orbitron font-bold text-cyber-red mb-6">
-            Register Now
+            Preregister Now
           </h2>
           <div className="w-24 h-1 bg-cyber-red mx-auto mb-4"></div>
           <p className="text-lg text-cyber-gray/80 max-w-2xl mx-auto">
@@ -119,22 +119,25 @@ export default function RegisterForm() {
           </p>
         </div>
 
+        {/* Note box about registration fees and preregistration */}
+        <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-5 mb-8 text-yellow-300 text-center font-medium">
+          <p>
+            <span className="font-bold">Note:</span> This is a <span className="font-bold">preregistration</span> form. The event has a registration fee. By preregistering, you will be contacted with payment instructions as soon as the payment portal goes live.
+          </p>
+        </div>
+
         <div className="bg-gradient-to-br from-cyber-dark/80 to-cyber-dark/60 border border-cyber-red/20 rounded-2xl p-8 md:p-12">
           {submitStatus === "success" ? (
             <div className="text-center py-12">
               <div className="text-6xl mb-6">🎉</div>
-              <h3 className="text-3xl font-orbitron font-bold text-cyber-red mb-4">
-                Registration Successful!
-              </h3>
               <p className="text-lg text-cyber-gray/90 mb-6">
-                Thank you for registering for Code Forge! We'll send you a
-                confirmation email shortly.
+                Thank you for preregistering for Code Forge! We’ll contact you with payment details as soon as the portal is live.
               </p>
               <button
                 onClick={() => setSubmitStatus("idle")}
                 className="btn-secondary"
               >
-                Register Another Team
+                Preregister Another Team
               </button>
             </div>
           ) : (
@@ -256,7 +259,7 @@ export default function RegisterForm() {
                       Submitting...
                     </div>
                   ) : (
-                    "Register Team"
+                    "Preregister Team"
                   )}
                 </button>
               </div>

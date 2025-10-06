@@ -23,6 +23,14 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
+  const menuItems = [
+    { name: 'About', id: 'about' },
+    { name: 'Schedule', id: 'schedule' },
+    { name: 'Prizes', id: 'prizes' },
+    { name: 'Rules', id: 'rules' },
+    { name: 'Pre-Register', id: 'preregister' }, // updated
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -44,15 +52,9 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex">
             <div className="ml-10 flex items-baseline space-x-8">
-              {[
-                { name: 'About', id: 'about' },
-                { name: 'Schedule', id: 'schedule' },
-                { name: 'Prizes', id: 'prizes' },
-                { name: 'Rules', id: 'rules' },
-                { name: 'Register', id: 'register' },
-              ].map((item) => (
+              {menuItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
@@ -99,19 +101,13 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-cyber-dark/95 backdrop-blur-md border-t border-cyber-red/20">
-            {[
-              { name: 'About', id: 'about' },
-              { name: 'Schedule', id: 'schedule' },
-              { name: 'Prizes', id: 'prizes' },
-              { name: 'Rules', id: 'rules' },
-              { name: 'Register', id: 'register' },
-            ].map((item) => (
+        <div className="md:hidden bg-cyber-dark/95 backdrop-blur-md border-t border-cyber-red/20">
+          <div className="px-4 pt-2 pb-4 flex flex-col space-y-2">
+            {menuItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="text-cyber-gray hover:text-cyber-red block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                className="text-cyber-gray hover:text-cyber-red text-left px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 {item.name}
               </button>

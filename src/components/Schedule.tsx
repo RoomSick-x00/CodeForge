@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export default function Schedule() {
   const scheduleRef = useRef<HTMLElement>(null);
@@ -10,7 +10,7 @@ export default function Schedule() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
@@ -25,26 +25,85 @@ export default function Schedule() {
   }, []);
 
   const schedule = [
-  // Day 1 — Kickoff & Coding Begins
-  { time: '09:00 AM', event: 'Check-in & Registration', description: 'Team verification and ID distribution' },
-  { time: '09:30 AM', event: 'Opening Ceremony & Theme Reveal', description: 'Welcome note, rules overview, and theme announcement' },
-  { time: '10:00 AM', event: 'Hackathon Begins', description: 'Code Forge officially kicks off — start building!' },
-  { time: '10:00 AM – 01:00 PM', event: 'Phase 1: Planning & Setup', description: 'Brainstorm ideas and set up your development environment' },
-  { time: '01:00 PM', event: 'Lunch Break', description: 'Take a break and refuel for the afternoon' },
-  { time: '02:00 PM – 07:00 PM', event: 'Phase 2: Hacking Continues', description: 'Collaborate and build — focus on your MVP' },
-  { time: '07:00 PM', event: 'Dinner Break', description: 'Relax and network with fellow participants' },
-  { time: '08:00 PM – 12:00 AM', event: 'Phase 3: Late Night Coding', description: 'Quiet hours — deep work and debugging' },
+    // 🗓️ Day 1 — Kickoff & Build Begins
+    {
+      time: "09:00 AM",
+      event: "Check-In & Registration",
+      description: "Get your ID and gear up!",
+    },
+    {
+      time: "09:30 AM",
+      event: "Opening Ceremony",
+      description: "Welcome, theme reveal, and rule rundown",
+    },
+    {
+      time: "10:00 AM",
+      event: "Hackathon Launch",
+      description: "CodeForge officially begins — start creating!",
+    },
+    {
+      time: "10:00 AM – 01:00 PM",
+      event: "Phase 1: Ideate & Plan",
+      description: "Brainstorm ideas and set up your project base",
+    },
+    {
+      time: "01:00 PM",
+      event: "Lunch Break",
+      description: "Fuel up for an intense coding afternoon",
+    },
+    {
+      time: "02:00 PM – 07:00 PM",
+      event: "Phase 2: Build & Collaborate",
+      description: "Focus on building your MVP with your team",
+    },
+    {
+      time: "07:00 PM",
+      event: "Dinner Break",
+      description: "Eat, network, and recharge",
+    },
+    {
+      time: "08:00 PM – 12:00 AM",
+      event: "Phase 3: Late-Night Sprint",
+      description: "Debug, polish, and push features — night mode on!",
+    },
 
-  // Day 2 — Mentorship, Review & Final Judging
-  { time: '12:00 AM – 07:00 AM', event: 'Early Morning Coding', description: 'Push through the night — refine your prototype' },
-  { time: '07:00 AM', event: 'Breakfast Break', description: 'Light meal to kickstart the day' },
-  { time: '08:00 AM – 01:00 PM', event: 'Mentorship & Mid-Point Check', description: 'Get guidance from mentors and fine-tune your project' },
-  { time: '01:00 PM', event: 'Lunch Break', description: 'Recharge before the final sprint' },
-  { time: '06:00 PM – 08:30 PM', event: 'Final Presentations & Judging', description: 'Present your project to the judging panel' },
-  { time: '08:30 PM', event: 'Judges Deliberation', description: 'Final evaluation and decision-making' },
-  { time: '09:00 PM', event: 'Awards & Closing Ceremony', description: 'Celebrate innovation and announce the winners' },
-];
-
+    // 🌅 Day 2 — Mentorship, Demos & Awards
+    {
+      time: "12:00 AM – 07:00 AM",
+      event: "Overnight Hustle",
+      description: "Refine your prototype and finalize your vision",
+    },
+    {
+      time: "07:00 AM",
+      event: "Breakfast",
+      description: "Grab a bite and prep for mentorship",
+    },
+    {
+      time: "08:00 AM – 01:00 PM",
+      event: "Mentorship & Midpoint Review",
+      description: "Get mentor feedback and fine-tune your build",
+    },
+    {
+      time: "01:00 PM",
+      event: "Lunch Break",
+      description: "Refuel before the final stretch",
+    },
+    {
+      time: "06:00 PM – 08:30 PM",
+      event: "Final Presentations",
+      description: "Pitch your project to the judges",
+    },
+    {
+      time: "08:30 PM",
+      event: "Judging & Deliberation",
+      description: "Panel reviews and picks the winners",
+    },
+    {
+      time: "09:00 PM",
+      event: "Awards & Closing",
+      description: "Celebrate creativity, winners, and wrap-up!",
+    },
+  ];
 
   return (
     <section
@@ -59,7 +118,8 @@ export default function Schedule() {
           </h2>
           <div className="w-24 h-1 bg-cyber-red mx-auto mb-4"></div>
           <p className="text-lg text-cyber-gray/80 max-w-2xl mx-auto">
-            A carefully crafted 36-hour journey designed to maximize creativity, learning, and innovation.
+            A carefully crafted 36-hour journey designed to maximize creativity,
+            learning, and innovation.
           </p>
         </div>
 
@@ -72,7 +132,7 @@ export default function Schedule() {
               <div
                 key={index}
                 className={`relative flex items-start ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 {/* Timeline dot */}
@@ -81,7 +141,7 @@ export default function Schedule() {
                 {/* Content */}
                 <div
                   className={`ml-12 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+                    index % 2 === 0 ? "md:pr-8" : "md:pl-8"
                   }`}
                 >
                   <div className="bg-cyber-dark/50 border border-cyber-red/20 rounded-lg p-6 hover:border-cyber-red/40 transition-colors duration-300">
@@ -109,18 +169,19 @@ export default function Schedule() {
               Ready to Join?
             </h3>
             <p className="text-cyber-gray/90 mb-4">
-              Don't miss out on this incredible 36-hour journey of innovation and creativity.
+              Don't miss out on this incredible 36-hour journey of innovation
+              and creativity.
             </p>
             <button
               onClick={() => {
-                const element = document.getElementById('register');
+                const element = document.getElementById("preregister");
                 if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                  element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
               className="btn-primary"
             >
-              Register Now
+              Pre-Register Now
             </button>
           </div>
         </div>
