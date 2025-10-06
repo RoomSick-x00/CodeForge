@@ -68,7 +68,7 @@ export default function Prizes() {
       perks: ['Cash Prize', 'Recognition', 'Certificates']
     },
     {
-      position: 'All Girls Tema, Best Project',
+      position: 'All Girls Team, Best Project',
       amount: '₹1000',
       icon: '🎤',
       description: 'Encouraging girls in the tech field',
