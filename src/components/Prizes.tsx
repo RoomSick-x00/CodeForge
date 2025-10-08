@@ -34,14 +34,14 @@ export default function Prizes() {
     },
     {
       position: '2nd Place',
-      amount: '₹X000',
+      amount: '₹X,000',
       icon: '🥈',
       description: 'Runner-up',
       perks: ['Cash Prize', 'Medal', 'Certificates']
     },
     {
       position: '3rd Place',
-      amount: '₹X000',
+      amount: '₹X,000',
       icon: '🥉',
       description: 'Second Runner-up',
       perks: ['Cash Prize', 'Medal', 'Certificates']
