@@ -27,49 +27,49 @@ export default function Prizes() {
   const prizes = [
     {
       position: '1st Place',
-      amount: '₹20,000',
+      amount: '₹X,000',
       icon: '🥇',
       description: 'Grand Prize Winner',
       perks: ['Cash Prize', 'Medal', 'Certificates', 'Mentorship Opportunity']
     },
     {
       position: '2nd Place',
-      amount: '₹10,000',
+      amount: '₹X000',
       icon: '🥈',
       description: 'Runner-up',
       perks: ['Cash Prize', 'Medal', 'Certificates']
     },
     {
       position: '3rd Place',
-      amount: '₹5,000',
+      amount: '₹X000',
       icon: '🥉',
       description: 'Second Runner-up',
       perks: ['Cash Prize', 'Medal', 'Certificates']
     },
     {
       position: 'Best Innovation',
-      amount: '₹1000',
+      amount: '₹X00',
       icon: '💡',
       description: 'Most Creative Solution',
       perks: ['Cash Prize', 'Special Recognition', 'Certificates']
     },
     {
       position: 'Best Design',
-      amount: '₹1000',
+      amount: '₹X00',
       icon: '🎨',
       description: 'Outstanding UI/UX',
       perks: ['Cash Prize', 'Certificates']
     },
     {
       position: 'Best Pitch',
-      amount: '₹1000',
+      amount: '₹X00',
       icon: '🎤',
       description: 'Most Compelling Presentation',
       perks: ['Cash Prize', 'Recognition', 'Certificates']
     },
     {
       position: 'All Girls Tema, Best Project',
-      amount: '₹1000',
+      amount: '₹X00',
       icon: '🎤',
       description: 'Encouraging girls in the tech field',
       perks: ['Cash Prize', 'Empowerment', 'Certificates']
