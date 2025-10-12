@@ -230,10 +230,10 @@ export default function Rules() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="mailto:priyanshu.pkbadhshah18@gmail.com"
+              href="mailto:mail.priyanshu.79@gmail.com"
               className="text-cyber-red hover:text-red-400 transition-colors font-semibold"
             >
-              priyanshu.pkbadhshah18@gmail.com
+              mail.priyanshu.79@gmail.com
             </a>
             <span className="hidden sm:block text-cyber-gray/50">•</span>
             <a
