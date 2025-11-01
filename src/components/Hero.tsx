@@ -67,7 +67,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <button
-            onClick={() => scrollToSection('register')}
+            onClick={() => scrollToSection('preregister')}
             className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
           >
             Register Now
