@@ -27,52 +27,52 @@ export default function Prizes() {
   const prizes = [
     {
       position: '1st Place',
-      amount: '₹X,000',
+      amount: '₹15,000',
       icon: '🥇',
       description: 'Grand Prize Winner',
-      perks: ['Cash Prize', 'Medal', 'Certificates', 'Mentorship Opportunity']
-    },
-    {
-      position: '2nd Place',
-      amount: '₹X,000',
-      icon: '🥈',
-      description: 'Runner-up',
-      perks: ['Cash Prize', 'Medal', 'Certificates']
-    },
-    {
-      position: '3rd Place',
-      amount: '₹X,000',
-      icon: '🥉',
-      description: 'Second Runner-up',
-      perks: ['Cash Prize', 'Medal', 'Certificates']
-    },
-    {
-      position: 'Best Innovation',
-      amount: '₹X00',
-      icon: '💡',
-      description: 'Most Creative Solution',
-      perks: ['Cash Prize', 'Special Recognition', 'Certificates']
-    },
-    {
-      position: 'Best Design',
-      amount: '₹X00',
-      icon: '🎨',
-      description: 'Outstanding UI/UX',
       perks: ['Cash Prize', 'Certificates']
     },
     {
+      position: '2nd Place',
+      amount: '₹10,000',
+      icon: '🥈',
+      description: 'Runner-up',
+      perks: ['Cash Prize', 'Certificates']
+    },
+    {
+      position: '3rd Place',
+      amount: '₹5,000',
+      icon: '🥉',
+      description: 'Second Runner-up',
+      perks: ['Cash Prize', 'Certificates']
+    },
+    {
+      position: 'Best Innovation',
+      amount: 'Gifts',
+      icon: '💡',
+      description: 'Most Creative Solution',
+      perks: ['Gifts', 'Special Recognition', 'Certificates']
+    },
+    {
+      position: 'Best Design',
+      amount: 'Gifts',
+      icon: '🎨',
+      description: 'Outstanding UI/UX',
+      perks: ['Gifts', 'Certificates']
+    },
+    {
       position: 'Best Pitch',
-      amount: '₹X00',
+      amount: 'Gifts',
       icon: '🎤',
       description: 'Most Compelling Presentation',
-      perks: ['Cash Prize', 'Recognition', 'Certificates']
+      perks: ['Gifts', 'Recognition', 'Certificates']
     },
     {
       position: 'All Girls Team, Best Project',
-      amount: '₹X00',
+      amount: 'Gifts',
       icon: '🎤',
       description: 'Encouraging girls in the tech field',
-      perks: ['Cash Prize', 'Empowerment', 'Certificates']
+      perks: ['Gifts', 'Empowerment', 'Certificates']
     }
   ];
 
