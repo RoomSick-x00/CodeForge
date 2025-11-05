@@ -5,7 +5,8 @@ import About from '@/components/About';
 import Schedule from '@/components/Schedule';
 import Prizes from '@/components/Prizes';
 import Rules from '@/components/Rules';
-import RegisterForm from '@/components/RegisterForm';
+// import RegisterForm from '@/components/RegisterForm';
+import Questions from '@/components/Questions';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -23,7 +24,8 @@ export default function Home() {
       <Schedule />
       <Prizes />
       <Rules />
-      <RegisterForm />
+      <Questions />
+      {/* <RegisterForm /> */}
       <Footer />
     </main>
   );

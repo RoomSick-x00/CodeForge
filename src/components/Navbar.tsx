@@ -28,7 +28,8 @@ export default function Navbar() {
     { name: 'Schedule', id: 'schedule' },
     { name: 'Prizes', id: 'prizes' },
     { name: 'Rules', id: 'rules' },
-    { name: 'Pre-Register', id: 'preregister' }, // updated
+    { name: 'Questions', id: 'questions' },
+    // { name: 'Pre-Register', id: 'preregister' }, // commented out
   ];
 
   return (

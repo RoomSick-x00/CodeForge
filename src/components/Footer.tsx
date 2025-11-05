@@ -32,7 +32,7 @@ export default function Footer() {
                 { name: 'Schedule', id: 'schedule' },
                 { name: 'Prizes', id: 'prizes' },
                 { name: 'Rules', id: 'rules' },
-                { name: 'Register', id: 'preregister' },
+                // { name: 'Register', id: 'preregister' }, // commented out
               ].map((link) => (
                 <li key={link.name}>
                   <button

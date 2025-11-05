@@ -25,85 +25,121 @@ export default function Schedule() {
   }, []);
 
   const schedule = [
-    // 🗓️ Day 1 — Kickoff & Build Begins
+    // 🗓️ Day 1 — Ideation & Core Coding (UPDATED)
     {
-      time: "09:00 AM",
-      event: "Check-In & Registration",
-      description: "Get your ID and gear up!",
+      time: "09:00 AM – 09:30 AM",
+      event: "Opening Ceremony & Workshop",
+      description:
+        "Welcome note, lamp lighting, and introduction session for first-time participants.",
     },
     {
-      time: "09:30 AM",
-      event: "Opening Ceremony",
-      description: "Welcome, theme reveal, and rule rundown",
+      time: "09:30 AM – 10:00 AM",
+      event: "Workshop by Industry Professional",
+      description:
+        "Specialized workshop delivered by an industry expert to inspire and share insights.",
     },
     {
-      time: "10:00 AM",
-      event: "Hackathon Launch",
-      description: "CodeForge officially begins — start creating!",
+      time: "10:00 AM – 10:30 AM",
+      event: "Rules & Tech Briefing",
+      description:
+        "Explanation of hackathon rules, judging criteria, and overview of tech platforms (GitHub, LeetCode, etc.).",
     },
     {
-      time: "10:00 AM – 01:00 PM",
-      event: "Phase 1: Ideate & Plan",
-      description: "Brainstorm ideas and set up your project base",
+      time: "10:30 AM – 11:00 AM",
+      event: "Mentoring Session 1",
+      description:
+        "Teams meet mentors and judges to discuss initial problem statements and solution ideas.",
     },
     {
-      time: "01:00 PM",
+      time: "11:00 AM – 01:00 PM",
+      event: "Phase 1: Coding Begins",
+      description:
+        "Teams start developing their initial solutions. Sub-sections are allocated.",
+    },
+    {
+      time: "01:00 PM – 02:00 PM",
       event: "Lunch Break",
-      description: "Fuel up for an intense coding afternoon",
+      description: "Relax and refuel before continuing your project.",
     },
     {
       time: "02:00 PM – 07:00 PM",
-      event: "Phase 2: Build & Collaborate",
-      description: "Focus on building your MVP with your team",
+      event: "Phase 2: Continued Coding",
+      description:
+        "Main coding session with mentors available. No major idea changes after this phase.",
     },
     {
-      time: "07:00 PM",
+      time: "07:00 PM – 08:00 PM",
       event: "Dinner Break",
-      description: "Eat, network, and recharge",
+      description: "Refresh and relax before the evening check-in.",
     },
     {
-      time: "08:00 PM – 12:00 AM",
-      event: "Phase 3: Late-Night Sprint",
-      description: "Debug, polish, and push features — night mode on!",
-    },
-
-    // 🌅 Day 2 — Mentorship, Demos & Awards
-    {
-      time: "12:00 AM – 07:00 AM",
-      event: "Overnight Hustle",
-      description: "Refine your prototype and finalize your vision",
+      time: "08:00 PM – 08:30 PM",
+      event: "Judgment Round (Initial Check-in)",
+      description:
+        "Quick desk-side evaluation by judges to ensure projects align with problem statements.",
     },
     {
-      time: "07:00 AM",
+      time: "08:30 PM – 12:00 AM",
+      event: "Late Night Coding",
+      description:
+        "Free development phase for debugging and refining solutions. At least one or two members must stay until midnight.",
+    },
+  
+    // 🌅 Day 2 — Development, Judgment & Finals (REVISED)
+    {
+      time: "12:00 AM – 05:00 AM",
+      event: "Late Night/Early Morning Coding",
+      description:
+        "overnight coding and debugging session for night owls. At least one or two members must stay.",
+    },
+    {
+      time: "05:00 AM – 07:00 AM",
+      event: "Phase 3: PPT Preparation",
+      description:
+        "One team member finalizes the presentation while others wrap up coding. Include both completed and pending work.",
+    },
+    {
+      time: "07:00 AM – 08:00 AM",
       event: "Breakfast",
-      description: "Grab a bite and prep for mentorship",
+      description: "Start the day fresh and ready for judging.",
     },
     {
-      time: "08:00 AM – 01:00 PM",
-      event: "Mentorship & Midpoint Review",
-      description: "Get mentor feedback and fine-tune your build",
+      time: "08:00 AM – 09:00 AM",
+      event: "Judging Round 2 (Progress Review)",
+      description:
+        "Formal judge review to assess morning progress and provide final guidance.",
     },
     {
-      time: "01:00 PM",
+      time: "09:00 AM – 01:00 PM",
+      event: "Phase 4: Final Development",
+      description:
+        "Final coding push — complete features and polish your solution.",
+    },
+    {
+      time: "01:00 PM – 02:00 PM",
       event: "Lunch Break",
-      description: "Refuel before the final stretch",
+      description: "Time to relax and recharge before the final stretch.",
     },
     {
-      time: "06:00 PM – 08:30 PM",
-      event: "Final Presentations",
-      description: "Pitch your project to the judges",
+      time: "02:00 PM – 05:00 PM",
+      event: "Phase 5: Code Freeze & Final Submission",
+      description:
+        "Last phase of development. Submit and freeze all projects by 5:00 PM.",
     },
     {
-      time: "08:30 PM",
-      event: "Judging & Deliberation",
-      description: "Panel reviews and picks the winners",
+      time: "05:00 PM – 09:00 PM",
+      event: "Final Presentations & Judging",
+      description:
+        "PPT-based judging session for shortlisted teams. Present your solution and future plans to the jury panel.",
     },
     {
-      time: "09:00 PM",
-      event: "Awards & Closing",
-      description: "Celebrate creativity, winners, and wrap-up!",
+      time: "09:00 PM – 09:30 PM",
+      event: "Closing & Winner Announcement",
+      description:
+        "Results declared and top 3 winners announced. Rewards and closing ceremony.",
     },
   ];
+  
 
   return (
     <section
@@ -163,7 +199,7 @@ export default function Schedule() {
           </div>
         </div>
 
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="bg-cyber-red/10 border border-cyber-red/20 rounded-lg p-6 max-w-2xl mx-auto">
             <h3 className="text-2xl font-orbitron font-bold text-cyber-red mb-3">
               Ready to Join?
@@ -184,7 +220,7 @@ export default function Schedule() {
               Pre-Register Now
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
